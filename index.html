@@ -5,10 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" 　href="slick/slick.css">
+    <!--    <link rel="stylesheet" 　href="slick/slick-theme.css">-->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+
     <link rel="shortcut icon" type="image/x-icon" href="">
     <title>SPICE LIFE</title>
-<link href="https://fonts.googleapis.com/earlyaccess/kokoro.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/earlyaccess/hannari.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/earlyaccess/kokoro.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/earlyaccess/hannari.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <style>
+        .slick-prev:before,
+        .slick-next:before {
+            color: rgb(25,25,25,0);
+        }
+        
+        .slick-dots {
+            height: 30px;
+        }
+        
+        .slick-dots li button:before {
+            color: #105779;
+        }
+        
+        .slick-dots li.slick-active button:before {
+            color: #f8b500;
+        }
+    </style>
+
 
 </head>
 
@@ -62,7 +90,7 @@
     </div>
     <div class="wrapper">
 
-        <div id="About">
+        <div id="About" class="scroll">
             <div class="title">
                 <h2>About Spice</h2>
             </div>
@@ -75,15 +103,19 @@
                     <p>　このサイトを通して、スパイスは「意外と簡単！」「楽しい！」ということを知れてもらえたらとても嬉しいです。
                     </p>
                 </div>
-                <img src="" alt="">
+                <div class="content-class-img1">
+                    <img src="./img/about-spice.png" alt="">
+                </div>
             </div>
         </div>
-        <div id="Awesome">
+        <div id="Awesome" class="scroll">
             <div class="title">
                 <h2>Spice is Awesome</h2>
             </div>
             <div class="awesome-content">
-                <img src="" alt="">
+                <div class="content-class-img2">
+                    <img src="./img/awesomespice.png" alt="">
+                </div>
                 <div class="content-p">
                     <p>　スパイスは素晴らしい。ブレンドも無限大、香らせ方も無限大、食材との組み合わせも無限大です。カレーはもちろん、お肉料理のマリネや野菜などにも使われ、あらゆる料理を美味しくします！ちなみに、スパイスとハーブの明確な違いはありません。例えば、好き嫌いが分かれるパクチーですが、パクチーの葉っぱはハーブ、カレーに使われるコリアンダーというスパイスはパクチーの種なのです。
                     </p>
@@ -98,9 +130,100 @@
             </div>
 
         </div>
+        <div class="Easysteps">
+            <div id="Easysteps" class="scroll">
+                <div class="title">
+                    <h2>Easy 5 steps of using spice</h2>
+                </div>
+                <div class="slider">
+                    <!--                <button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="">Previous</button>-->
+
+                    <!--                <button class="slick-next slick-arrow" aria-label="Next" type="button" style="">Next</button>-->
+
+                    <img src="/img/steps/1.png" />
+                    <img src="/img/steps/2.png" />
+                    <img src="/img/steps/3.png" />
+                    <img src="/img/steps/4.png" />
+                    <img src="/img/steps/5.png" />
+                    <img src="/img/steps/6.png" />
+                    <img src="/img/steps/7.png" />
+                </div>
+            </div>
+        </div>
+        <div class="Cultures">
+            <div id="Cultures" class="scroll">
+                <div class="title">
+                    <h2>Food Culture × Food Culture</h2>
+                </div>
+            </div>
+        </div>
+        <div class="Recipes">
+            <div id="Recipes" class="scroll">
+                <div class="title">
+                    <h2>Secret Recipes</h2>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">
+            <p>@2020 SPICE LIFE</p>
+        </div>
     </div>
 
 
+
+    <script src="slick/slick.min.js"></script>
+    <script>
+        $(".slider").slick({
+            autoplay: true,
+            autoplaySpeed: 1500,
+            dots: true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            arrows: false,
+            responsive: [{
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                },
+                //                {
+                //                    breakpoint: 480,
+                //                    settings: {
+                //                        slidesToShow: 1,
+                //                        slidesToScroll: 1
+                //                    }
+                //                }
+
+            ]
+        });
+    </script>
+    <script>
+        jQuery(function($) {
+
+            $('.scroll').css('visibility', 'hidden');
+            $(window).scroll(function() {
+                var windowHeight = $(window).height(),
+                    topWindow = $(window).scrollTop();
+                $('.scroll').each(function() {
+                    var objectPosition = $(this).offset().top;
+                    if (topWindow > objectPosition - windowHeight + 200) {
+                        $(this).addClass("scrollcss");
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -9,6 +9,7 @@
     <!--    <link rel="stylesheet" 　href="slick/slick-theme.css">-->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css" rel="stylesheet">
 
     <link rel="shortcut icon" type="image/x-icon" href="">
     <title>SPICE LIFE</title>
@@ -17,12 +18,17 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript"></script>
+
+
 
     <style>
+        /*
         .slick-prev:before,
         .slick-next:before {
             color: rgb(25,25,25,0);
         }
+*/
         
         .slick-dots {
             height: 30px;
@@ -98,7 +104,7 @@
                 <div class="content-p">
                     <p>　スパイス。カレーをはじめとするエスニックの料理にももちろん、欧米や日本でも多用されています。歴史を見ると、スパイスを巡って何度も争いが起きました。スパイスの三大要素は「香り」、「色味」、「辛味」です。これらが食材の味を引き出し、掛け算され、料理を美味しくします。</p>
                     <br>
-                    <p>　日本では、スパイスは漢方として平安時代から使わ れてきています。しかしながら、日本ではスパイスが日常で使われることはまだまだ少ないですよね。 料理でスパイスを使う文化があまりなかったからかスパイスに手を出せないという人が多いです。</p>
+                    <p>　日本では、スパイスは漢方として平安時代から使われてきています。しかしながら、日本ではスパイスが日常で使われることはまだまだ少ないですよね。 料理でスパイスを使う文化があまりなかったからかスパイスに手を出せないという人が多いです。</p>
                     <br>
                     <p>　このサイトを通して、スパイスは「意外と簡単！」「楽しい！」ということを知れてもらえたらとても嬉しいです。
                     </p>
@@ -128,6 +134,7 @@
                 </div>
 
             </div>
+            
 
         </div>
         <div class="Easysteps">
@@ -155,6 +162,22 @@
                 <div class="title">
                     <h2>Food Culture × Food Culture</h2>
                 </div>
+                <div class="culture-content">
+                    <div class="content-class-img2">
+                        <img src="./img/cultureculture.png" alt="">
+                    </div>
+                    <div class="content-p">
+                        <p>　料理は食文化と食文化の融合です。例えば、フランス料理のコーススタイルはロシアからきたものだし、イタリア料理で現在は大量に使われている唐辛子やトマトは大航海時代にヨーロッパに入ってきたものです。
+                        </p>
+                        <br>
+                        <p>　スパイスといえばインドを思い浮かべる人が多いと思いますが、インドのカレーたちも食文化が融合して生まれたものです。インドのカレーにはよくトマトが使われますが、イタリアと同じく、トマトは大航海時代に輸入されたものです。また、ポークヴィンダルーはポルトガルが植民地化していたゴア地方で、ポルトガルの食文化のヴィネガーを使う料理だし、チキンティカマサラ はイギリスで生まれたインドカレーです。
+                        </p>
+                        <br>
+                        <p>　スパイスカレーには、フレンチの要素を取り入れて、フォン(ダシ汁)を使ったり、メイラード反応(焼き目をつけて旨味を増させること)を取り入れたり、和食の要素を取り入れて、ダシを取るなどすることがあります。料理、そしてカレーというものは食文化の融合です
+                        </p>
+                    </div>
+
+                </div>
             </div>
         </div>
         <div class="Recipes">
@@ -162,8 +185,26 @@
                 <div class="title">
                     <h2>Secret Recipes</h2>
                 </div>
+                <div class="recipes-wrapper">
+                    <div class="recipes_movebutton1">
+                        <a href="/recipes/butterchickenpng.png" data-lightbox="group"><img src="/img/IMG_9691.JPG" class="recipes_button1"></a>
+                    </div>
+                    <div class="recipes_movebutton2">
+                        <a href="/recipes/coconutshrimp.png" data-lightbox="group"><img src="/img/IMG_8848.JPG" class="recipes_button1"></a>
+                    </div>
+                    <div class="recipes_movebutton3">
+                        <a href="/recipes/momococonut.png" data-lightbox="group"><img src="/img/IMG_8974.JPG" class="recipes_button1"></a>
+                    </div>
+                </div>
+                <div class="insta_suc">
+                    <a href="https://www.instagram.com/tai___cooking_and_eatingout" target="_blank"> <img src="/img/spiceliefeinsta.png" alt="" class="insta_button"></a>
+                </div>
+
+
+
             </div>
         </div>
+
 
         <div id="footer">
             <p>@2020 SPICE LIFE</p>
@@ -191,7 +232,7 @@
                     }
                 },
                 {
-                    breakpoint: 600,
+                    breakpoint: 700,
                     settings: {
                         slidesToShow: 1,
                         slidesToScroll: 1

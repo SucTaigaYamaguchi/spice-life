@@ -54,7 +54,6 @@
         font-family: 'Hannari', serif;
         font-size: 20px;
         font-weight:
-            
     }
     
     ul {
@@ -63,6 +62,7 @@
         position: relative;
         align-items: center;
         height: 90px;
+        list-style-type: none;
     }
     
     .normal-li {
@@ -118,6 +118,73 @@
         background-color: rgb(25, 25, 25);
     }
     
+    .ham {
+        display: none;
+    }
+    
+    .menu-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 200;
+        width: 45px;
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #f8b500;
+        color: #fff;
+        box-shadow: 0 0 1.5px rgb(25, 25, 25);
+        transition: 0.25s;
+        border: 0px solid #fff;
+        border-radius: 50%;
+    }
+    
+    .menu-btn:hover {
+        border-radius: 25%;
+    }
+
+.fa-bars {
+}
+    
+    .menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 199;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: rgb(25, 25, 25, 0.9);
+    }
+    
+    .menu__item {
+        width: 100%;
+        height: auto;
+        /*  padding: .5em 1em;*/
+        padding: 30px 0;
+        text-align: center;
+        color: #fff;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    /* アニメーション前のメニューの状態 */
+    
+    .menu {
+        transform: translateX(100vw);
+        transition: all .3s linear;
+    }
+    /* アニメーション後のメニューの状態 */
+    
+    .menu.is-active {
+        transform: translateX(0);
+    }
+    
     .main-video {
         display: flex;
         align-items: center;
@@ -140,7 +207,7 @@
         width: 900px;
         height: auto;
         float: left;
-        z-index: 2;
+        z-index: 0.4;
         /*
     display: flex;
     align-items: center;
@@ -311,7 +378,7 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        padding-bottom: 60px;
+        padding-bottom: 30px;
     }
     
     .slider {
@@ -347,7 +414,7 @@
     }
     
     #Recipes {
-        width: 70%;
+        width: 75%;
         margin: 0 auto;
         position: relative;
         padding-top: 45px;
@@ -464,6 +531,8 @@
         border-radius: 50%;
     }
     
+    .lb-data .lb-close {}
+    
     #footer {
         width: 100vw;
         background-color: #105779;
@@ -517,6 +586,18 @@
         }
     }
     
+    @media all and (min-width: 1024px) {
+        .lb-data .lb-close {
+            position: absolute;
+            /*
+    display: flex;
+    justify-content: flex-end;
+*/
+            top: -36px;
+            left: 83.2%;
+        }
+    }
+    
     @media all and (min-width: 2000px) {
         .movebutton img {
             margin: 67.5px;
@@ -531,17 +612,7 @@
         }
     }
     
-    @media all and (max-width: 1024px) {
-        .main-visual .main-title img {
-            width: 80vw;
-        }
-        .movebutton img {
-            width: 33vw;
-            height: auto;
-        }
-        .normal-li {
-            margin: 0px 18px;
-        }
+    @media all and (max-width: 1500px) {
         #Awesome {
             width: 80%;
         }
@@ -557,8 +628,26 @@
         #Recipes {
             width: 86%;
         }
+        .movebutton img {
+            width: 150px;
+            height: 150px;
+        }
+    }
+    
+    @media all and (max-width: 1024px) {
+        .main-visual .main-title img {
+            width: 80vw;
+        }
+        .movebutton img {
+            width: 33vw;
+            height: auto;
+        }
+        .normal-li {
+            margin: 0px 18px;
+        }
         #About .title {
             justify-content: center;
+            padding-bottom: 60px;
         }
         #Awesome .title {
             justify-content: center;
@@ -626,6 +715,9 @@
         #header {
             display: none;
         }
+                .ham {
+            display: flex;
+        }
     }
     
     @media all and (max-width: 480px) {
@@ -642,4 +734,12 @@
         .sp-recipe {
             display: flex;
         }
+        /*
+        .lb-data .lb-close { 
+    top: 0;
+    bottom: 100px;
+    left: 83.2%;
+
+} 
+*/
     }

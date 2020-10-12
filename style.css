@@ -9,6 +9,10 @@
         letter-spacing: 0.05em;
     }
     
+    html {
+        scroll-behavior: smooth;
+    }
+    
     body {
         width: 100%;
         background: #fff;
@@ -50,6 +54,7 @@
         font-family: 'Hannari', serif;
         font-size: 20px;
         font-weight:
+            
     }
     
     ul {
@@ -395,6 +400,7 @@
         align-items: center;
         justify-content: center;
         width: 33.3vw;
+        height: auto;
         transition: 0.25s;
         border: 3px solid #fff;
         border-radius: 9px;
@@ -405,6 +411,7 @@
         align-items: center;
         justify-content: center;
         width: 33.3vw;
+        height: auto;
         transition: 0.25s;
         border: 3px solid #fff;
         border-radius: 9px;
@@ -415,6 +422,7 @@
         align-items: center;
         justify-content: center;
         width: 33.3vw;
+        height: auto;
         transition: 0.25s;
         border: 3px solid #fff;
         border-radius: 9px;
@@ -433,10 +441,6 @@
     }
     
     .sp-recipe {
-        display: none;
-    }
-
-    .sp-recipe a {
         display: none;
     }
     
@@ -510,6 +514,20 @@
             -webkit-transform: translateY(0);
             -ms-transform: translateY(0);
             transform: translateY(0);
+        }
+    }
+    
+    @media all and (min-width: 2000px) {
+        .movebutton img {
+            margin: 67.5px;
+            width: 270px;
+            height: 270px;
+            transition: 0.25s;
+            border: 0px solid #e3a000;
+            border-radius: 50%;
+        }
+        p {
+            font-size: 24px;
         }
     }
     

@@ -1,817 +1,864 @@
-                        @font-face {
-                        font-family: 'jkgothic';
-                        src: url('./font/My_Font.woff') format('woff'), url('./fonts/JKG-M_3.ttf') format('truetype');
-                    }
-                    
-                    * {
-                        margin: 0;
-                        padding: 0;
-                        letter-spacing: 0.05em;
-                    }
-                    
-                    html {
-                        scroll-behavior: smooth;
-                    }
-                    
-                    body {
-                        width: 100%;
-                        background: #fff;
-                    }
-                    
-                    #header {
-                        z-index: 3;
-                        top: 0;
-                        position: absolute;
-                        width: 100%;
-                        overflow: hidden;
-                        background-color: rgb(25, 25, 25, 0.25);
-                        transition: 1.0s;
-                    }
-                    
-                    #header:hover {
-                        background-color: rgb(25, 25, 25, 0);
-                    }
-                    
-                    .wrapper {
-                        margin: 0 auto;
-                        width: 100%;
-                        position: relative;
-                        overflow: hidden;
-                    }
-                    
-                    a {
-                        font-family: 'jkgothic', sans-serif;
-                    }
-                    
-                    h2 {
-                        font-family: 'jkgothic', sans-serif;
-                        font-size: 60px;
-                        color: #105779;
-                        text-align: center;
-                    }
-                    
-                    p {
-                        font-family: 'Hannari', serif;
-                        font-size: 20px;
-                    }
-                    
-                    ul {
-                        display: flex;
-                        justify-content: center;
-                        position: relative;
-                        align-items: center;
-                        height: 90px;
-                        list-style-type: none;
-                    }
-                    
-                    .normal-li {
-                        list-style-type: none;
-                        float: left;
-                        /*    margin: 0px 20px;*/
-                        margin: 3px 45px;
-                    }
-                    /*
+                                @font-face {
+                                    font-family: 'jkgothic';
+                                    src: url('./font/My_Font.woff') format('woff'), url('./fonts/JKG-M_3.ttf') format('truetype');
+                                }
+                                
+                                * {
+                                    margin: 0;
+                                    padding: 0;
+                                    letter-spacing: 0.05em;
+                                }
+                                
+                                html {
+                                    scroll-behavior: smooth;
+                                }
+                                
+                                body {
+                                    width: 100%;
+                                    background: #105779;
+                                }
+                                
+                                #header {
+                                    z-index: 3;
+                                    top: 0;
+                                    position: absolute;
+                                    width: 100%;
+                                    overflow: hidden;
+                                    background-color: rgb(25, 25, 25, 0.25);
+                                    transition: 1.0s;
+                                }
+                                
+                                #header:hover {
+                                    background-color: rgb(25, 25, 25, 0);
+                                }
+                                
+                                .wrapper {
+                                    margin: 0 auto;
+                                    width: 100%;
+                                    position: relative;
+                                    overflow: hidden;
+                                }
+                                
+                                a {
+                                    font-family: 'jkgothic', sans-serif;
+                                }
+                                
+                                h2 {
+                                    font-family: 'jkgothic', sans-serif;
+                                    font-size: 60px;
+                                    color: #105779;
+                                    text-align: center;
+                                }
+                                
+                                p {
+                                    font-family: 'Hannari', serif;
+                                    font-size: 20px;
+                                }
+                                
+                                ul {
+                                    display: flex;
+                                    justify-content: center;
+                                    position: relative;
+                                    align-items: center;
+                                    height: 90px;
+                                    list-style-type: none;
+                                }
+                                
+                                .normal-li {
+                                    list-style-type: none;
+                                    float: left;
+                                    /*    margin: 0px 20px;*/
+                                    margin: 3px 45px;
+                                }
+                                /*
 .normal-li-e {
     list-style-type: none;
     float: left;
     margin: 0px 80px 0 20px;
 }
 */
-                    
-                    .move {
-                        font-size: 22px;
-                        font-weight: 900;
-                        text-decoration: none;
-                        color: #fff;
-                        transition: 0.5s;
-                    }
-                    
-                    .move:hover {
-                        transform: scale(2.2);
-                        padding: 10px;
-                        border-radius: 50px;
-                    }
-                    
-                    .move1:hover {
-                        color: #fff;
-                        background-color: rgb(25, 25, 25);
-                    }
-                    
-                    .move2:hover {
-                        color: #fff;
-                        background-color: rgb(25, 25, 25);
-                    }
-                    
-                    .move3:hover {
-                        color: rgb(25, 25, 25);
-                        background-color: rgb(255, 255, 255);
-                    }
-                    
-                    .move4:hover {
-                        color: #fff;
-                        background-color: rgb(25, 25, 25);
-                    }
-                    
-                    .move5:hover {
-                        color: #f8b500;
-                        background-color: rgb(25, 25, 25);
-                    }
-                    
-                    .ham {
-                        display: none;
-                    }
-                    
-                    .menu-btn {
-                        position: fixed;
-                        top: 20px;
-                        right: 20px;
-                        z-index: 200;
-                        width: 45px;
-                        height: 45px;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        background: #f8b500;
-                        color: #fff;
-                        box-shadow: 0 0 1.5px rgb(25, 25, 25);
-                        transition: 0.25s;
-                        border: 0px solid #fff;
-                        border-radius: 50%;
-                    }
-                    
-                    .menu-btn:hover {
-                        border-radius: 25%;
-                    }
-                    
-                    .fa-bars {}
-                    
-                    .menu {
-                        position: fixed;
-                        top: 0;
-                        right: 0;
-                        z-index: 199;
-                        width: 100vw;
-                        height: 100vh;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        justify-content: center;
-                        background: rgb(25, 25, 25, 0.9);
-                    }
-                    
-                    .menu__item {
-                        width: 100%;
-                        height: auto;
-                        /*  padding: .5em 1em;*/
-                        padding: 30px 0;
-                        text-align: center;
-                        color: #fff;
-                        box-sizing: border-box;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                    }
-                    /* アニメーション前のメニューの状態 */
-                    
-                    .menu {
-                        transform: translateX(100vw);
-                        transition: all .3s linear;
-                    }
-                    /* アニメーション後のメニューの状態 */
-                    
-                    .menu.is-active {
-                        transform: translateX(0);
-                    }
-                    
-                    .main-video {
-                        display: flex;
-                        height: auto;
-                        align-items: center;
-                        justify-content: center;
-                        
-                        position: relative;
-                        overflow: hidden;
-                        width: 100%;
-                        height: 100vh;
-                        background: url() no-repeat center center/cover ;
-                        
-                        
+                                
+                                .move {
+                                    font-size: 22px;
+                                    font-weight: 900;
+                                    text-decoration: none;
+                                    color: #fff;
+                                    transition: 0.5s;
+                                }
+                                
+                                .move:hover {
+                                    transform: scale(2.2);
+                                    padding: 10px;
+                                    border-radius: 50px;
+                                }
+                                
+                                .move1:hover {
+                                    color: #fff;
+                                    background-color: rgb(25, 25, 25);
+                                }
+                                
+                                .move2:hover {
+                                    color: #fff;
+                                    background-color: rgb(25, 25, 25);
+                                }
+                                
+                                .move3:hover {
+                                    color: rgb(25, 25, 25);
+                                    background-color: rgb(255, 255, 255);
+                                }
+                                
+                                .move4:hover {
+                                    color: #fff;
+                                    background-color: rgb(25, 25, 25);
+                                }
+                                
+                                .move5:hover {
+                                    color: #f8b500;
+                                    background-color: rgb(25, 25, 25);
+                                }
+                                
+                                .ham {
+                                    display: none;
+                                }
+                                
+                                .menu-btn {
+                                    position: fixed;
+                                    top: 20px;
+                                    right: 20px;
+                                    z-index: 200;
+                                    width: 45px;
+                                    height: 45px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    background: #f8b500;
+                                    color: #fff;
+                                    box-shadow: 0 0 1.5px rgb(25, 25, 25);
+                                    transition: 0.25s;
+                                    border: 0px solid #fff;
+                                    border-radius: 50%;
+                                }
+                                
+                                .menu-btn:hover {
+                                    border-radius: 25%;
+                                }
+                                
+                                .fa-bars {}
+                                
+                                .menu {
+                                    position: fixed;
+                                    top: 0;
+                                    right: 0;
+                                    z-index: 199;
+                                    width: 100vw;
+                                    height: 100vh;
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    justify-content: center;
+                                    background: rgb(25, 25, 25, 0.9);
+                                }
+                                
+                                .menu__item {
+                                    width: 100%;
+                                    height: auto;
+                                    /*  padding: .5em 1em;*/
+                                    padding: 30px 0;
+                                    text-align: center;
+                                    color: #fff;
+                                    box-sizing: border-box;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                }
+                                /* アニメーション前のメニューの状態 */
+                                
+                                .menu {
+                                    transform: translateX(100vw);
+                                    transition: all .3s linear;
+                                }
+                                /* アニメーション後のメニューの状態 */
+                                
+                                .menu.is-active {
+                                    transform: translateX(0);
+                                }
+                                
+                                .main-video {
+                                    display: flex;
+/*                                    height: auto;*/
+                                    align-items: center;
+                                    justify-content: center;
+                                    position: relative;
+                                    overflow: hidden;
+                                    width: 100vw;
+                                    height: 100vh;
+                                    background: url(/img/IMG_1409_Original%202.jpg) no-repeat center center/cover;
+                                  
+                                    background-size: cover;
+                                    background-position: center;
+                                }
+                                
+                                .main-video-SP {
+                                    display: none;
+                                }
+                                
+                                .main-video-PC {
+                                    display: flex;
+                                }
+                                
+                                .main-video video {
+                                    min-width: 100vw;
+                                    min-height: 100vh;
+                                     align-self: flex-start;
+                               
+                                }
+                                
 /*
-                        background-image: ;
-                        background-size: cover;
-                        background-position: center;
+                                .main-video img {
+                                    min-width: 100vw;
+                                    min-height: 100vh;
+                                    align-self: flex-start;
+                                    align-items: flex-start;
+                                }
 */
-                        
-          
-                    }
-
-video {
-    min-width: 100%;
-    min-height: 100%;
-/*    z-index: 1;*/
-}
-                    
-                    .main-video img {
-                    min-width: 100%;
-    min-height: 100vh;
-
-                        align-self: flex-start;
-                    }
-                    
-                    .main-title {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        position: absolute;
-                    }
-                    
-                    .main-visual .main-title img {
-                        width: 900px;
-                        height: auto;
-                        float: left;
-                        z-index: 0.4;
-                        /*
+                                
+                                .main-title {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    position: absolute;
+                                }
+                                
+                                .main-visual .main-title img {
+                                    width: 900px;
+                                    height: auto;
+                                    float: left;
+                                    z-index: 0.4;
+                                    /*
     display: flex;
     align-items: center;
     justify-content: center;
 */
-                    }
-                    
-                    .main-visual {
-                        width: 100%;
-                        position: relative;
-                    }
-                    
-                    .main-visuall {
-                        width: 100vw;
-                        height: 100vh;
-                        background-position: center center;
-                        background-size: cover;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                    }
-                    
-                    #header2 {
-                        margin: 0 auto;
-                        width: 100%;
-                        height: auto;
-                        position: relative;
-                        z-index: 100;
-                        background-color: rgb(25, 25, 25);
-                    }
-                    
-                    .movebutton-wrapper {
-                        background-color: rgb(25, 25, 25);
-                        width: 100%;
-                        height: auto;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        margin: 0 auto;
-                        overflow: hidden;
-                        padding-top: 45px;
-                        padding-bottom: 45px;
-                        flex-wrap: wrap;
-                    }
-                    
-                    .movebutton img {
-                        margin: 45px;
-                        width: 180px;
-                        height: 180px;
-                        transition: 0.25s;
-                        border: 0px solid #e3a000;
-                        border-radius: 50%;
-                    }
-                    
-                    .button1:hover {
-                        padding: 10px;
-                        border: 5px solid #e3a000;
-                        border-radius: 50%;
-                    }
-                    
-                    .button2:hover {
-                        padding: 10px;
-                        border: 5px solid #e3a000;
-                        border-radius: 50%;
-                    }
-                    
-                    .button3:hover {
-                        padding: 10px;
-                        border: 5px solid #e3a000;
-                        border-radius: 50%;
-                    }
-                    
-                    .button4:hover {
-                        padding: 10px;
-                        border: 5px solid #e3a000;
-                        border-radius: 50%;
-                    }
-                    
-                    .button5:hover {
-                        padding: 10px;
-                        border: 5px solid #e3a000;
-                        border-radius: 50%;
-                    }
-                    
-                    #About {
-                        width: 70%;
-                        margin: 0 auto;
-                        position: relative;
-                        padding-top: 45px;
-                        padding-bottom: 90px;
-                    }
-                    
-                    #About .title {
-                        display: flex;
-                        align-items: center;
-                        justify-content: flex-start;
-                        /*                          padding-bottom: 60px;*/
-                    }
-                    
-                    .about-content {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                    }
-                    
-                    .content-class-img1 img {
-                        width: 540px;
-                        height: auto;
-                        padding-left: 45px;
-                        align-self: flex-start;
-                    }
-                    
-                    .content-class-img1 {
-                        display: flex;
-                        justify-content: flex-end;
-                        height: auto;
-                    }
-                    
-                    .content-class-img2 img {
-                        width: 540px;
-                        height: auto;
-                        padding-right: 45px;
-                        align-self: flex-start;
-                    }
-                    
-                    .content-class-img2 {
-                        display: flex;
-                        justify-content: flex-start;
-                        height: auto;
-                    }
-                    
-                    .content-p {
-                        padding-top: 30px;
-                    }
-                    
-                    #Awesome {
-                        width: 70%;
-                        margin: 0 auto;
-                        position: relative;
-                        padding-top: 45px;
-                        padding-bottom: 90px;
-                    }
-                    
-                    #Awesome .title {
-                        display: flex;
-                        align-items: center;
-                        justify-content: flex-end;
-                        padding-bottom: 60px;
-                    }
-                    
-                    .awesome-content {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                    }
-                    
-                    #Easysteps {
-                        width: 70%;
-                        margin: 0 auto;
-                        position: relative;
-                        padding-top: 45px;
-                        padding-bottom: 90px;
-                    }
-                    
-                    #Easysteps h2 {
-                        color: #f8b500;
-                        padding-bottom: 30px;
-                    }
-                    
-                    .Easysteps {
-                        width: 100vw;
-                        background-color: rgb(25, 25, 25);
-                    }
-                    
-                    #Easysteps .title {
-                        display: flex;
-                        align-items: center;
-                        justify-content: flex-start;
-                        padding-bottom: 60px;
-                    }
-                    
-                    .slider {
-                        margin: 0px auto;
-                        position: relative;
-                        z-index: 100;
-                    }
-                    
-                    .slider img {
-                        width: 100%;
-                        height: auto;
-                    }
-                    
-                    #Cultures {
-                        width: 70%;
-                        margin: 0 auto;
-                        position: relative;
-                        padding-top: 45px;
-                        padding-bottom: 90px;
-                    }
-                    
-                    #Cultures .title {
-                        display: flex;
-                        align-items: center;
-                        justify-content: flex-end;
-                        padding-bottom: 60px;
-                    }
-                    
-                    .culture-content {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                    }
-                    
-                    #Recipes {
-                        width: 75%;
-                        margin: 0 auto;
-                        position: relative;
-                        padding-top: 45px;
-              
-                        height: auto;
-                        z-index: 100;
-                    }
-                    
-                    .Recipes {
-                        width: 100vw;
-                        background-color: #f8b500;
-                    }
-                    
-                    #Recipes h2 {
-                        color: #fff;
-                    }
-                    
-                    #Recipes .title {
-                        display: flex;
-                        align-items: center;
-                        justify-content: flex-start;
-                        padding-bottom: 60px;
-                    }
-                    
-                    .recipes-wrapper {
-                        width: 100%;
-                        height: auto;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        margin: 0 auto;
-                        overflow: hidden;
-                        flex-wrap: wrap;
-                    }
-                    
-                    .recipes_movebutton1 {
-                        padding-right: 9px;
-                    }
-                    
-                    .recipes_movebutton2 {
-                        padding-left: 9px;
-                    }
-                    
-                    .recipes_movebutton3 {
-                        padding-top: 18px;
-                    }
-                    
-                    .recipes_movebutton1 {
-                        display: flex;
-                        height: auto;
-                    }
-                    
-                    .recipes_movebutton3 {
-                        display: flex;
-                        height: auto;
-                    }
-                    
-                    .recipes_movebutton2 {
-                        display: flex;
-                        height: auto;
-                    }
-                    
-                    .recipes_movebutton1 img {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        width: 33.3vw;
-                        height: auto;
-                        transition: 0.25s;
-                        border: 3px solid #fff;
-                        border-radius: 9px;
-                        align-self: flex-start;
-                    }
-                    
-                    .recipes_movebutton2 img {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        width: 33.3vw;
-                        height: auto;
-                        transition: 0.25s;
-                        border: 3px solid #fff;
-                        border-radius: 9px;
-                        align-self: flex-start;
-                    }
-                    
-                    .recipes_movebutton3 img {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        width: 33.3vw;
-                        height: auto;
-                        transition: 0.25s;
-                        border: 3px solid #fff;
-                        border-radius: 9px;
-                        /*            margin-bottom: 90px;*/
-                        align-self: flex-start;
-                    }
-                    
-                    .recipes_button1:hover {
-                        padding: 9px;
-                        border: 6px solid #fff;
-                        border-radius: 21px;
-                        opacity: 0.75;
-                    }
-                    
-                    .pc-recipe {
-                        display: flex;
-                    }
-                    
-                    .sp-recipe {
-                        display: none;
-                    }
-                    
-                    .sp-recipe href {
-                        width: 800px;
-                        height: auto;
-                    }
-                    
-                    .insta_suc {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                    }
-                    
-                    .insta_suc img {
-                        margin-top: 90px;
-                                margin-bottom: 90px;
-                        width: 33.3vw;
-                        height: auto;
-                        transition: 1.2s;
-                        border: 0px solid #105779;
-                        border-radius: 50%;
-                    }
-                    
-                    .insta_button:hover {
-                        padding: 21px;
-                        border: 30px solid #105779;
-                        border-radius: 50%;
-                    }
-                    
-                    .lb-data .lb-close {}
-                    
-                    #footer {
-                        width: 100vw;
-                        background-color: #105779;
-                        padding: 10px 0;
-                    }
-                    
-                    #footer p {
-                        text-align: center;
-                        color: #fff;
-                        font-size: 20px;
-                        font-weight: 1000;
-                        font-family: 'jkgothic', sans-serif;
-                    }
-                    
-                    .scrollcss {
-                        -webkit-animation-fill-mode: both;
-                        -ms-animation-fill-mode: both;
-                        animation-fill-mode: both;
-                        -webkit-animation-duration: 3.0s;
-                        -ms-animation-duration: 3.0s;
-                        animation-duration: 3.0s;
-                        -webkit-animation-name: scrollcss;
-                        -ms-animation-name: scrollcss;
-                        animation-name: scrollcss;
-                        visibility: visible !important;
-                    }
-                    
-                    @-webkit-keyframes scrollcss {
-                        0% {
-                            opacity: 0;
-                            -webkit-transform: translateY(-20px);
-                        }
-                        100% {
-                            opacity: 1;
-                            -webkit-transform: translateY(0);
-                        }
-                    }
-                    
-                    @keyframes scrollcss {
-                        0% {
-                            opacity: 0;
-                            -webkit-transform: translateY(-20px);
-                            -ms-transform: translateY(-20px);
-                            transform: translateY(-20px);
-                        }
-                        100% {
-                            opacity: 1;
-                            -webkit-transform: translateY(0);
-                            -ms-transform: translateY(0);
-                            transform: translateY(0);
-                        }
-                    }
-                    
-                    @media all and (min-width: 1024px) {
-                        .lb-data .lb-close {
-                            position: absolute;
-                            /*
+                                }
+                                
+                                .main-visual {
+                                    width: 100%;
+                                    position: relative;
+                                }
+                                
+                                .main-visuall {
+                                    width: 100vw;
+                                    height: 100vh;
+                                    background-position: center center;
+                                    background-size: cover;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                }
+                                
+                                #header2 {
+                                    margin: 0 auto;
+                                    width: 100%;
+                                    height: auto;
+                                    position: relative;
+                                    z-index: 100;
+                                    background-color: rgb(25, 25, 25);
+                                }
+                                
+                                .movebutton-wrapper {
+                                    background-color: rgb(25, 25, 25);
+                                    width: 100%;
+                                    height: auto;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    margin: 0 auto;
+                                    overflow: hidden;
+                                    padding-top: 45px;
+                                    padding-bottom: 45px;
+                                    flex-wrap: wrap;
+                                }
+                                
+                                .movebutton img {
+                                    margin: 45px;
+                                    width: 180px;
+                                    height: 180px;
+                                    transition: 0.25s;
+                                    border: 0px solid #e3a000;
+                                    border-radius: 50%;
+                                }
+                                
+                                .button1:hover {
+                                    padding: 10px;
+                                    border: 5px solid #e3a000;
+                                    border-radius: 50%;
+                                }
+                                
+                                .button2:hover {
+                                    padding: 10px;
+                                    border: 5px solid #e3a000;
+                                    border-radius: 50%;
+                                }
+                                
+                                .button3:hover {
+                                    padding: 10px;
+                                    border: 5px solid #e3a000;
+                                    border-radius: 50%;
+                                }
+                                
+                                .button4:hover {
+                                    padding: 10px;
+                                    border: 5px solid #e3a000;
+                                    border-radius: 50%;
+                                }
+                                
+                                .button5:hover {
+                                    padding: 10px;
+                                    border: 5px solid #e3a000;
+                                    border-radius: 50%;
+                                }
+                                
+                                .About {
+                                    width: 100%;
+                                    background-color: #fff;
+                                }
+                                
+                                #About {
+                                    width: 70%;
+                                    margin: 0 auto;
+                                    position: relative;
+                                    padding-top: 45px;
+                                    padding-bottom: 90px;
+                                    background-color: #fff;
+                                }
+                                
+                                #About .title {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: flex-start;
+                                    /*                          padding-bottom: 60px;*/
+                                }
+                                
+                                .about-content {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                }
+                                
+                                .content-class-img1 img {
+                                    width: 540px;
+                                    height: auto;
+                                    padding-left: 45px;
+                                    align-self: flex-start;
+                                }
+                                
+                                .content-class-img1 {
+                                    display: flex;
+                                    justify-content: flex-end;
+                                    height: auto;
+                                }
+                                
+                                .content-class-img2 img {
+                                    width: 540px;
+                                    height: auto;
+                                    padding-right: 45px;
+                                    align-self: flex-start;
+                                }
+                                
+                                .content-class-img2 {
+                                    display: flex;
+                                    justify-content: flex-start;
+                                    height: auto;
+                                }
+                                
+                                .content-p {
+                                    padding-top: 30px;
+                                }
+                                
+                                .Awesome {
+                                    width: 100%;
+                                    background-color: #fff;
+                                }
+                                
+                                #Awesome {
+                                    width: 70%;
+                                    margin: 0 auto;
+                                    position: relative;
+                                    padding-top: 45px;
+                                    padding-bottom: 90px;
+                                    background-color: #fff;
+                                }
+                                
+                                #Awesome .title {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: flex-end;
+                                    padding-bottom: 60px;
+                                }
+                                
+                                .awesome-content {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                }
+                                
+                                #Easysteps {
+                                    width: 70%;
+                                    margin: 0 auto;
+                                    position: relative;
+                                    padding-top: 45px;
+                                    padding-bottom: 90px;
+                                }
+                                
+                                #Easysteps h2 {
+                                    color: #f8b500;
+                                    padding-bottom: 30px;
+                                }
+                                
+                                .Easysteps {
+                                    width: 100vw;
+                                    background-color: rgb(25, 25, 25);
+                                }
+                                
+                                #Easysteps .title {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: flex-start;
+                                    padding-bottom: 60px;
+                                }
+                                
+                                .slider {
+                                    margin: 0px auto;
+                                    position: relative;
+                                    z-index: 100;
+                                }
+                                
+                                .slider img {
+                                    width: 100%;
+                                    height: auto;
+                                }
+                                  .Cultures {
+                                    width: 100%;
+                                    background-color: #fff;
+                                }
+                                #Cultures {
+                                    width: 70%;
+                                    margin: 0 auto;
+                                    position: relative;
+                                    padding-top: 45px;
+                                    padding-bottom: 90px;
+                                    background-color: #fff;
+                                }
+                                
+                                #Cultures .title {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: flex-end;
+                                    padding-bottom: 60px;
+                                }
+                                
+                                .culture-content {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                }
+                                
+                                #Recipes {
+                                    width: 75%;
+                                    margin: 0 auto;
+                                    position: relative;
+                                    padding-top: 45px;
+                                    height: auto;
+                                    z-index: 100;
+                                }
+                                
+                                .Recipes {
+                                    width: 100vw;
+                                    background-color: #f8b500;
+                                }
+                                
+                                #Recipes h2 {
+                                    color: #fff;
+                                }
+                                
+                                #Recipes .title {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: flex-start;
+                                    padding-bottom: 60px;
+                                }
+                                
+                                .recipes-wrapper {
+                                    width: 100%;
+                                    height: auto;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    margin: 0 auto;
+                                    overflow: hidden;
+                                    flex-wrap: wrap;
+                                }
+                                
+                                .recipes_movebutton1 {
+                                    padding-right: 9px;
+                                }
+                                
+                                .recipes_movebutton2 {
+                                    padding-left: 9px;
+                                }
+                                
+                                .recipes_movebutton3 {
+                                    padding-top: 18px;
+                                }
+                                
+                                .recipes_movebutton1 {
+                                    display: flex;
+                                    height: auto;
+                                }
+                                
+                                .recipes_movebutton3 {
+                                    display: flex;
+                                    height: auto;
+                                }
+                                
+                                .recipes_movebutton2 {
+                                    display: flex;
+                                    height: auto;
+                                }
+                                
+                                .recipes_movebutton1 img {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    width: 33.3vw;
+                                    height: auto;
+                                    transition: 0.25s;
+                                    border: 3px solid #fff;
+                                    border-radius: 9px;
+                                    align-self: flex-start;
+                                }
+                                
+                                .recipes_movebutton2 img {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    width: 33.3vw;
+                                    height: auto;
+                                    transition: 0.25s;
+                                    border: 3px solid #fff;
+                                    border-radius: 9px;
+                                    align-self: flex-start;
+                                }
+                                
+                                .recipes_movebutton3 img {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    width: 33.3vw;
+                                    height: auto;
+                                    transition: 0.25s;
+                                    border: 3px solid #fff;
+                                    border-radius: 9px;
+                                    /*            margin-bottom: 90px;*/
+                                    align-self: flex-start;
+                                }
+                                
+                                .recipes_button1:hover {
+                                    padding: 9px;
+                                    border: 6px solid #fff;
+                                    border-radius: 21px;
+                                    opacity: 0.75;
+                                }
+                                
+                                .pc-recipe {
+                                    display: flex;
+                                }
+                                
+                                .sp-recipe {
+                                    display: none;
+                                }
+                                
+                                .lb-outerContainer {}
+                                
+                                .lb-image {}
+                                
+                                .sp-recipe href {
+                                    width: 800px;
+                                    height: auto;
+                                }
+                                
+                                .insta_suc {
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                                
+                                .insta_suc img {
+                                    margin-top: 90px;
+                                    margin-bottom: 90px;
+                                    width: 33.3vw;
+                                    height: auto;
+                                    transition: 1.2s;
+                                    border: 0px solid #105779;
+                                    border-radius: 50%;
+                                }
+                                
+                                .insta_button:hover {
+                                    padding: 21px;
+                                    border: 30px solid #105779;
+                                    border-radius: 50%;
+                                }
+                                
+                                .lb-data .lb-close {}
+                                
+                                #footer {
+                                    width: 100vw;
+                                    background-color: #105779;
+                                    padding: 10px 0;
+                                }
+                                
+                                #footer p {
+                                    text-align: center;
+                                    color: #fff;
+                                    font-size: 20px;
+                                    font-weight: 1000;
+                                    font-family: 'jkgothic', sans-serif;
+                                }
+                                
+                                .scrollcss {
+                                    -webkit-animation-fill-mode: both;
+                                    -ms-animation-fill-mode: both;
+                                    animation-fill-mode: both;
+                                    -webkit-animation-duration: 3.0s;
+                                    -ms-animation-duration: 3.0s;
+                                    animation-duration: 3.0s;
+                                    -webkit-animation-name: scrollcss;
+                                    -ms-animation-name: scrollcss;
+                                    animation-name: scrollcss;
+                                    visibility: visible !important;
+                                }
+                                
+                                @-webkit-keyframes scrollcss {
+                                    0% {
+                                        opacity: 0;
+                                        -webkit-transform: translateY(-20px);
+                                    }
+                                    100% {
+                                        opacity: 1;
+                                        -webkit-transform: translateY(0);
+                                    }
+                                }
+                                
+                                @keyframes scrollcss {
+                                    0% {
+                                        opacity: 0;
+                                        -webkit-transform: translateY(-20px);
+                                        -ms-transform: translateY(-20px);
+                                        transform: translateY(-20px);
+                                    }
+                                    100% {
+                                        opacity: 1;
+                                        -webkit-transform: translateY(0);
+                                        -ms-transform: translateY(0);
+                                        transform: translateY(0);
+                                    }
+                                }
+                                
+                                @media all and (min-width: 1024px) {
+                                    .lb-data .lb-close {
+                                        position: absolute;
+                                        /*
     display: flex;
     justify-content: flex-end;
 */
-                            top: -36px;
-                            left: 83.2%;
-                        }
-                    }
-                    
-                    @media all and (min-width: 2685px) {}
-                    
-                    @media all and (min-width: 2000px) {
-                        .movebutton img {
-                            margin: 67.5px;
-                            width: 270px;
-                            height: 270px;
-                            transition: 0.25s;
-                            border: 0px solid #e3a000;
-                            border-radius: 50%;
-                        }
-                        p {
-                            font-size: 24px;
-                        }
-                    }
-                    
-                    @media all and (max-width: 1500px) {
-                        #Awesome {
-                            width: 80%;
-                        }
-                        #About {
-                            width: 80%;
-                        }
-                        #Easysteps {
-                            width: 80%;
-                        }
-                        #Cultures {
-                            width: 80%;
-                        }
-                        #Recipes {
-                            width: 86%;
-                        }
-                        .movebutton img {
-                            width: 150px;
-                            height: 150px;
-                        }
-                        .recipes_movebutton1 img {
-                            width: 470px;
-                        }
-                        .recipes_movebutton2 img {
-                            width: 470px;
-                        }
-                        .recipes_movebutton3 img {
-                            width: 470px;
-                        }
-                        @media all and (max-width: 1024px) {
-                            .main-visual .main-title img {
-                                width: 80vw;
-                            }
-                            .movebutton img {
-                                width: 33vw;
-                                height: auto;
-                            }
-                            .normal-li {
-                                margin: 0px 18px;
-                            }
-                            #About .title {
-                                justify-content: center;
-                                padding-bottom: 45px;
-                            }
-                            #Awesome .title {
-                                justify-content: center;
-                                 padding-bottom: 45px;
-                            }
-                            #Easysteps .title {
-                                justify-content: center;
-                                 padding-bottom: 45px;
-                            }
-                            #Cultures .title {
-                                justify-content: center;
-                                 padding-bottom: 45px;
-                            }
-                            #Recipes .title {
-                                justify-content: center;
-                                 padding-bottom: 45px;
-                            }
-                            .about-content {
-                                flex-wrap: wrap-reverse;
-                                padding-top: 30px;
-                            }
-                            .awesome-content {
-                                flex-wrap: wrap;
-                                padding-top: 30px;
-                            }
-                            .culture-content {
-                                flex-wrap: wrap;
-                                padding-top: 30px;
-                            }
-                            .slider {
-                                padding-top: 30px;
-                            }
-                            .recipes-wrapper {
-                                padding-top: 30px;
-                            }
-                            .content-class-img1 img {
-                                width: 100%;
-                                height: auto;
-                                margin: 0 auto;
-                                padding-left: 0;
-                            }
-                            .content-class-img2 img {
-                                width: 100%;
-                                margin: 0 auto;
-                                height: auto;
-                                padding-right: 0;
-                            }
-                            .recipes_movebutton1 img {
-                                width: 80vw;
-                            }
-                            .recipes_movebutton2 img {
-                                width: 80vw;
-                            }
-                            .recipes_movebutton3 img {
-                                width: 80vw;
-                            }
-                            .recipes_movebutton1 {
-                                padding-right: 0;
-                                padding-bottom: 18px;
-                            }
-                            .recipes_movebutton2 {
-                                padding-left: 0;
-                                padding-bottom: 18px;
-                            }
-                            .recipes_movebutton3 {
-                                padding-top: 0;
-                            }
-                            .insta_suc img {
-                                width: 70vw;
-                            }
-                        }
-                        @media all and (max-width: 700px) {
-                            #header {
-                                display: none;
-                            }
-                            .ham {
-                                display: flex;
-                            }
-                        }
-                        @media all and (max-width: 480px) {
-                            h2 {
-                                font-size: 33px;
-                            }
-                            .movebutton img {
-                                width: 80vw;
-                                height: auto;
-                            }
-                            p {
-                                font-size: 16.5px;
-                            }
-                            .pc-recipe {
-                                display: none;
-                            }
-                            .sp-recipe {
-                                display: flex;
-                            }
-                            .insta_suc img {
-                        margin-top: 45px;
-                                margin-bottom: 45px;
-                            /*
+                                        top: -36px;
+                                        left: 83.2%;
+                                    }
+                                }
+                                
+                                @media all and (min-width: 2685px) {}
+                                
+                                @media all and (min-width: 2000px) {
+                                    .movebutton img {
+                                        margin: 67.5px;
+                                        width: 270px;
+                                        height: 270px;
+                                        transition: 0.25s;
+                                        border: 0px solid #e3a000;
+                                        border-radius: 50%;
+                                    }
+                                    p {
+                                        font-size: 24px;
+                                    }
+                                }
+                                
+                                @media all and (max-width: 1500px) {
+                                    #Awesome {
+                                        width: 80%;
+                                    }
+                                    #About {
+                                        width: 80%;
+                                    }
+                                    #Easysteps {
+                                        width: 80%;
+                                    }
+                                    #Cultures {
+                                        width: 80%;
+                                    }
+                                    #Recipes {
+                                        width: 93%;
+                                    }
+                                    .movebutton img {
+                                        width: 150px;
+                                        height: 150px;
+                                    }
+                                    .recipes_movebutton1 img {
+                                        width: 470px;
+                                    }
+                                    .recipes_movebutton2 img {
+                                        width: 470px;
+                                    }
+                                    .recipes_movebutton3 img {
+                                        width: 470px;
+                                    }
+                                }
+                                
+                                @media all and (max-width: 1024px) {
+                                    .main-visual .main-title img {
+                                        width: 80vw;
+                                    }
+                                    .movebutton img {
+                                        width: 33vw;
+                                        height: auto;
+                                    }
+                                    .normal-li {
+                                        margin: 0px 18px;
+                                    }
+                                    #About .title {
+                                        justify-content: center;
+                                        padding-bottom: 45px;
+                                    }
+                                    #Awesome .title {
+                                        justify-content: center;
+                                        padding-bottom: 45px;
+                                    }
+                                    #Easysteps .title {
+                                        justify-content: center;
+                                        padding-bottom: 45px;
+                                    }
+                                    #Cultures .title {
+                                        justify-content: center;
+                                        padding-bottom: 45px;
+                                    }
+                                    #Recipes .title {
+                                        justify-content: center;
+                                        padding-bottom: 45px;
+                                    }
+                                    .about-content {
+                                        flex-wrap: wrap-reverse;
+                                        padding-top: 30px;
+                                    }
+                                    .awesome-content {
+                                        flex-wrap: wrap;
+                                        padding-top: 30px;
+                                    }
+                                    .culture-content {
+                                        flex-wrap: wrap;
+                                        padding-top: 30px;
+                                    }
+                                    .slider {
+                                        padding-top: 30px;
+                                    }
+                                    .recipes-wrapper {
+                                        padding-top: 30px;
+                                    }
+                                    .content-class-img1 img {
+                                        width: 100%;
+                                        height: auto;
+                                        margin: 0 auto;
+                                        padding-left: 0;
+                                    }
+                                    .content-class-img2 img {
+                                        width: 100%;
+                                        margin: 0 auto;
+                                        height: auto;
+                                        padding-right: 0;
+                                    }
+                                    .recipes_movebutton1 img {
+                                        width: 80vw;
+                                    }
+                                    .recipes_movebutton2 img {
+                                        width: 80vw;
+                                    }
+                                    .recipes_movebutton3 img {
+                                        width: 80vw;
+                                    }
+                                    .recipes_movebutton1 {
+                                        padding-right: 0;
+                                        padding-bottom: 18px;
+                                    }
+                                    .recipes_movebutton2 {
+                                        padding-left: 0;
+                                        padding-bottom: 18px;
+                                    }
+                                    .recipes_movebutton3 {
+                                        padding-top: 0;
+                                    }
+                                    .insta_suc img {
+                                        width: 70vw;
+                                    }
+                                }
+                                
+                                @media all and (max-width: 700px) {
+                                    #header {
+                                        display: none;
+                                    }
+                                    .ham {
+                                        display: flex;
+                                    }
+                                }
+                                
+                                @media all and (max-width: 480px) {
+                                    .main-video-SP {
+                                        display: flex;
+                                    }
+                                    .main-video-PC {
+                                        display: none;
+                                    }
+                                    h2 {
+                                        font-size: 33px;
+                                    }
+                                    .movebutton img {
+                                        width: 80vw;
+                                        height: auto;
+                                    }
+                                    p {
+                                        font-size: 16.5px;
+                                    }
+                                    .pc-recipe {
+                                        display: none;
+                                    }
+                                    .sp-recipe {
+                                        display: flex;
+                                    }
+                                    .lb-outerContainer {
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        width: 80vw!important;
+                                        height: auto!important;
+                                    }
+                                    .lb-image {
+                                        display: flex;
+                                        width: 78vw!important;
+                                        height: auto!important;
+                                        justify-content: center;
+                                        align-items: center;
+                                    }
+                                    .insta_suc img {
+                                        margin-top: 45px;
+                                        margin-bottom: 45px;
+                                        /*
         .lb-data .lb-close { 
     top: 0;
     bottom: 100px;
@@ -819,57 +866,67 @@ video {
 
 } 
 */
-                        }
-                             #About .title {
-                                padding-bottom: 22.5px;
-                            }
-                            #Awesome .title {
-                                justify-content: center;
-                                 padding-bottom: 22.5px;
-                            }
-                            #Easysteps .title {
-                                justify-content: center;
-                                 padding-bottom: 22.5px;
-                            }
-                            #Cultures .title {
-                                justify-content: center;
-                                 padding-bottom: 22.5px;
-                            }
-                            #Recipes .title {
-                                justify-content: center;
-                                 padding-bottom: 22.5px;
-                            }
-                            .about-content {
-                                flex-wrap: wrap-reverse;
-                                padding-top: 22.5px;
-                            }
-                            .awesome-content {
-                                flex-wrap: wrap;
-                                padding-top: 22.5px;
-                            }
-                            .culture-content {
-                                flex-wrap: wrap;
-                                padding-top: 22.5px;
-                            }
-                            .slider {
-                                padding-top: 22.5px;
-                            }
-                            .recipes-wrapper {
-                                padding-top: 22.5px;
-                            }
-                            #About {
-                                padding-bottom: 45px;
-                            }
-                                 #Awesome {
-                                padding-bottom: 45px;
-                            }
-                                 #Easysteps {
-                                padding-bottom: 45px;
-                            }
-                                 #Cultures {
-                                padding-bottom: 45px;
-                            }
-                                 #Recipes {
-                                padding-bottom: 45px;
-                            }
-                        }
+                                    }
+                                    /*
+                                    .bottom-only-105779 {
+                                        width: 100vw;
+                                        height: 300vh;
+                                        background-color: #105779;
+                                        transform:  translateX(-100%);
+                                        
+                                    }
+                                    
+*/
+                                    #About .title {
+                                        padding-bottom: 22.5px;
+                                    }
+                                    #Awesome .title {
+                                        justify-content: center;
+                                        padding-bottom: 22.5px;
+                                    }
+                                    #Easysteps .title {
+                                        justify-content: center;
+                                        padding-bottom: 22.5px;
+                                    }
+                                    #Cultures .title {
+                                        justify-content: center;
+                                        padding-bottom: 22.5px;
+                                    }
+                                    #Recipes .title {
+                                        justify-content: center;
+                                        padding-bottom: 22.5px;
+                                    }
+                                    .about-content {
+                                        flex-wrap: wrap-reverse;
+                                        padding-top: 22.5px;
+                                    }
+                                    .awesome-content {
+                                        flex-wrap: wrap;
+                                        padding-top: 22.5px;
+                                    }
+                                    .culture-content {
+                                        flex-wrap: wrap;
+                                        padding-top: 22.5px;
+                                    }
+                                    .slider {
+                                        padding-top: 22.5px;
+                                    }
+                                    .recipes-wrapper {
+                                        padding-top: 22.5px;
+                                    }
+                                    #About {
+                                        padding-bottom: 45px;
+                                    }
+                                    #Awesome {
+                                        padding-bottom: 45px;
+                                    }
+                                    #Easysteps {
+                                        padding-bottom: 45px;
+                                    }
+                                    #Cultures {
+                                        padding-bottom: 45px;
+                                    }
+                                    #Recipes {
+                                        padding-bottom: 45px;
+                                    }
+                                }

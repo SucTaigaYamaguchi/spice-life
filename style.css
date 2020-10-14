@@ -48,11 +48,13 @@
                                     font-size: 60px;
                                     color: #105779;
                                     text-align: center;
+                                    line-height: 1.25;
                                 }
                                 
                                 p {
                                     font-family: 'Hannari', serif;
                                     font-size: 20px;
+                                    line-height: 2.0;
                                 }
                                 
                                 ul {
@@ -87,7 +89,7 @@
                                 }
                                 
                                 .move:hover {
-                                    transform: scale(2.2);
+                                    transform: scale(1.5);
                                     padding: 10px;
                                     border-radius: 50px;
                                 }
@@ -126,8 +128,8 @@
                                     top: 20px;
                                     right: 20px;
                                     z-index: 200;
-                                    width: 45px;
-                                    height: 45px;
+                                    width: 60px;
+                                    height: 60px;
                                     display: flex;
                                     justify-content: center;
                                     align-items: center;
@@ -185,7 +187,7 @@
                                 
                                 .main-video {
                                     display: flex;
-/*                                    height: auto;*/
+                                    /*                                  height: auto;*/
                                     align-items: center;
                                     justify-content: center;
                                     position: relative;
@@ -193,7 +195,6 @@
                                     width: 100vw;
                                     height: 100vh;
                                     background: url(/img/IMG_1409_Original%202.jpg) no-repeat center center/cover;
-                                  
                                     background-size: cover;
                                     background-position: center;
                                 }
@@ -209,12 +210,10 @@
                                 .main-video video {
                                     min-width: 100vw;
                                     min-height: 100vh;
-                                     align-self: flex-start;
+                                    align-self: flex-start;
                                     object-fit: cover;
-                               
                                 }
-                                
-/*
+                                /*
                                 .main-video img {
                                     min-width: 100vw;
                                     min-height: 100vh;
@@ -437,11 +436,14 @@
                                 .slider img {
                                     width: 100%;
                                     height: auto;
+                                    border-radius: 3px;
                                 }
-                                  .Cultures {
+                                
+                                .Cultures {
                                     width: 100%;
                                     background-color: #fff;
                                 }
+                                
                                 #Cultures {
                                     width: 70%;
                                     margin: 0 auto;
@@ -449,6 +451,10 @@
                                     padding-top: 45px;
                                     padding-bottom: 90px;
                                     background-color: #fff;
+                                }
+                                
+                                .br-sp {
+                                    display: none;
                                 }
                                 
                                 #Cultures .title {
@@ -599,14 +605,14 @@
                                     margin-bottom: 90px;
                                     width: 33.3vw;
                                     height: auto;
-                                    transition: 1.2s;
+                                    transition: 0.6s;
                                     border: 0px solid #105779;
                                     border-radius: 50%;
                                 }
                                 
                                 .insta_button:hover {
                                     padding: 21px;
-                                    border: 30px solid #105779;
+                                    border: 21px solid #105779;
                                     border-radius: 50%;
                                 }
                                 
@@ -808,6 +814,9 @@
                                     .insta_suc img {
                                         width: 70vw;
                                     }
+                                    .br-sp {
+                                        display: block;
+                                    }
                                 }
                                 
                                 @media all and (max-width: 700px) {
@@ -830,7 +839,8 @@
                                         font-size: 33px;
                                     }
                                     .movebutton img {
-                                        width: 80vw;
+                                        margin: 25px;
+                                        width: 50vw;
                                         height: auto;
                                     }
                                     p {
@@ -864,7 +874,6 @@
     top: 0;
     bottom: 100px;
     left: 83.2%;
-
 } 
 */
                                     }
@@ -928,6 +937,6 @@
                                         padding-bottom: 45px;
                                     }
                                     #Recipes {
-                                        padding-bottom: 45px;
+                                        padding-bottom: 0px;
                                     }
                                 }
